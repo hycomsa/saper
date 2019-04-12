@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Sapper Game - Hycom</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+<div class="page__layout">
+    <div class="page__content">
+        <header><img src="./assets/hycom_logo.svg" alt="hycom"></header>
+        <div class="content">
+            <div class="content__message">
+                <h1 class="h2">Choose difficulty level</h1>
+                <ul class="levels">
+                    <form action="#" data-th-action="@{/saper}" data-th-object="${model}" method="get">
+                        <li class="row">
+                            <div class="col col--button"><a class="h2 level__button level__button--easy"
+                                                            href="">
+                                <button class="grid__button" type="submit" name="level"
+                                        th:value="EASY">Easy
+                                </button>
+
+                            </a></div>
+                            <div class="col col--image"><img src="./assets/e_wykres.png" alt=""></div>
+                        </li>
+                        <li class="row">
+                            <div class="col col--button"><a class="h2 level__button level__button--medium" href="">
+                                <button class="grid__button" type="submit" name="level"
+                                        th:value="MEDIUM">Medium
+                                </button>
+                            </a>
+                            </div>
+                            <div class="col col--image"><img src="./assets/m_wykres.png" alt=""></div>
+                        </li>
+                        <li class="row">
+                            <div class="col col--button"><a class="h2 level__button level__button--hard"
+                                                            href="">
+                                <button class="grid__button" type="submit" name="level"
+                                        th:value="HARD">Hard
+                                </button>
+                            </a></div>
+                            <div class="col col--image"><img src="./assets/h_wykres.png" alt=""></div>
+                        </li>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

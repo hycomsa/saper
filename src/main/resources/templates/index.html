@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Sapper Game - Hycom</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+<div class="page__layout">
+    <div class="page__content">
+        <header>
+            <img src="./assets/hycom_logo.svg" alt="hycom">
+        </header>
+        <div class="content">
+            <form action="#" data-th-action="@{/saper}" data-th-object="${model}" method="post">
+                <div class="grid__wrapper">
+                    <ul class="grid">
+                        <th:block th:each="map : ${boardContainer}">
+                            <li class="grid__item" th:each="list, iStat : ${map.value}" th:remove="all-but-first">
+                                <button class="grid__button" type="submit" name="action"
+                                        th:value="${map.key + ':' + iStat.index}"
+                                        th:attr="disabled=''+(${list.disabled})">
+                                    <span th:if="${list.disabled == true}" th:text="${list.value}">2</span>
+                                    <span class="u-acc-hide" th:if="${list.disabled == false}">Click me!</span>
+                                </button>
+                                <span class="grid__item__separator"></span>
+                                <span class="grid__item__separator grid__item__separator--bottom"></span>
+                            </li>
+                        </th:block>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

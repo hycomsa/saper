@@ -1,0 +1,17 @@
+extends _layouts/main
+
+block head_end
+
+block content
+    .content__message
+        h1.h2 Choose difficulty level
+        - var values = [{text:'Easy', id:'easy', img:'e_wykres.png'}, {text:'Medium', id:'medium', img:'m_wykres.png'}, {text:'Hard', id:'hard', img:'h_wykres.png'}];
+        ul.levels
+            each val in values
+                li.row
+                    .col.col--button
+                        a(href='', class='h2 level__button level__button--' + val.id)= val.text
+                    .col.col--image
+                        img(src='../static/assets/' + val.img, alt='')
+
+block body_end

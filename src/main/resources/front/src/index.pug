@@ -1,0 +1,20 @@
+extends _layouts/main
+
+block head_end
+
+block content
+    form(action="#", data-th-action="@{/sapper}", data-th-object="${model}", method="post")
+        div.grid__wrapper
+            - var n = 0;
+            ul.grid
+                th:block(th:each="map : ${boardContainer}")
+                while n < 64
+                    li.grid__item(th:each="list, iStat : ${map.value}", th:remove="all-but-first")
+                        button.grid__button(type="submit", name="action", th:value="${map.key + ':' + iStat.index}", th:attr="disabled=''+(${list.disabled})")
+                            span(th:if="${list.disabled == true}", th:text="${list.value}") 2
+                            span.u-acc-hide(th:if="${list.disabled == false}") Click me!
+                        - n++
+                        span.grid__item__separator
+                        span.grid__item__separator.grid__item__separator--bottom
+
+block body_end

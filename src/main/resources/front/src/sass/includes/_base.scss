@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou');
+
+body {
+    background: $color1;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    color: $color4;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.page {
+    &__layout {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 20px);
+    }
+    &__content {
+        padding: 86px 480px 46px;
+        position: relative;
+        box-sizing: border-box;
+        min-width: 1684px;
+        min-height: 855px;
+    }
+}
+
+header img {
+    width: 240px;
+    position: absolute;
+    left: 0;
+    top: 20px;
+}
+
+.u-acc-hide {
+    position: absolute !important;
+    left: -9999px !important;
+}
+
+h1 {
+    font-size: 106px;
+    font-weight: normal;
+    margin: 66px 0 0;
+    .h1__wrapper & {
+        padding: 20px 50px 20px 40px;
+        display: inline-block;
+        position: relative;
+        border: 1px solid $color2;
+        &::before {
+            content: '';
+            display: block;
+            background: $color1;
+            width: 28px;
+            height: 28px;
+            bottom: -15px;
+            left: -15px;
+            position: absolute;
+            transform: rotate(45deg);
+            border-top: 1px solid $color2;
+        }
+        &::after {
+            content: '';
+            display: block;
+            background: $color1;
+            width: 114px;
+            height: 114px;
+            top: -58px;
+            right: -58px;
+            position: absolute;
+            transform: rotate(45deg);
+            border-bottom: 1px solid $color2;
+        }
+    }
+}
+.h1__wrapper {
+    padding: 0 0 14px 11px;
+    position: relative;
+    display: inline-block;
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 30px;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        background: url("linia_play_again.png") no-repeat left bottom;
+        z-index: 2;
+    }
+}
+h2, .h2 {
+    font-size: 80px;
+    font-weight: normal;
+}
+
+.link-button {
+    color: $color1;
+    font-size: 62px;
+    background: $color2;
+    display: inline-block;
+    text-decoration: none;
+    height: 99px;
+    width: 499px;
+    box-sizing: border-box;
+    padding: 12px 0 0 122px;
+    text-align: left;
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        background: $color1;
+        width: 28px;
+        height: 28px;
+        bottom: -15px;
+        left: -15px;
+        position: absolute;
+        transform: rotate(45deg);
+    }
+    &::after {
+        content: '';
+        display: block;
+        background: $color1;
+        width: 110px;
+        height: 110px;
+        bottom: -56px;
+        right: -56px;
+        position: absolute;
+        transform: rotate(45deg);
+    }
+}
+
+.content {
+    &__message {
+        text-align: center;
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        &.success {
+            padding-top: 92px;
+        }
+        &.error {
+            img {
+                margin-top: -24px;
+            }
+            h1 {
+                padding-left: 64px;
+                padding-right: 154px;
+            }
+        }
+    }
+}
+
+.row {
+    display: flex;
+}
+.col--button {
+
+}
+.levels {
+    margin-top: 72px;
+    li + li {
+        margin-top: 44px;
+    }
+}
+.level__button {
+    height: 134px;
+    width: 424px;
+    color: $color1;
+    text-decoration: none;
+    text-align: left;
+    padding: 25px 0 0 33px;
+    display: block;
+    box-sizing: border-box;
+    margin-right: 24px;
+    &--easy {
+        background: url("easy-bg.png") no-repeat left top;
+    }
+    &--medium {
+        background: url("medium-bg.png") no-repeat left top;
+    }
+    &--hard {
+        background: url("hard-bg.png") no-repeat left top;
+    }
+}

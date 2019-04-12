@@ -1,0 +1,17 @@
+doctype html
+html
+    head
+        title Sapper Game - Hycom
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1")
+        link(rel="stylesheet" href="../static/assets/style.css")
+        block head_end
+
+    body
+        .page__layout
+            .page__content
+                include ../_partials/header
+                .content
+                    block content
+
+        block body_end
